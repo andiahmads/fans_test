@@ -250,8 +250,29 @@
 				{
 					"name": "login",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"user2@gmail.com\",\r\n    \"password\":\"user123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
 					},
 					"response": [
 						{
@@ -622,7 +643,14 @@
 					"name": "show detail product",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VjNmQ0MTZhZjM1ZDIxY2UyNTRlMCIsImlhdCI6MTY0ODU0MDc4NCwiZXhwIjoxNjQ4NjI3MTg0fQ.iqCO_4tVDYXFIkLkVH04soL1RDeGUp5x1WjD_KRfkJ4",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"url": {
 							"raw": "http://localhost:5000/api/products/62413dab71ad546477e28812",
 							"protocol": "http",
@@ -886,7 +914,25 @@
 					"name": "show all cart",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VjNmQ0MTZhZjM1ZDIxY2UyNTRlMCIsImlhdCI6MTY0ODU0MDc4NCwiZXhwIjoxNjQ4NjI3MTg0fQ.iqCO_4tVDYXFIkLkVH04soL1RDeGUp5x1WjD_KRfkJ4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/showcart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"showcart"
+							]
+						}
 					},
 					"response": [
 						{
