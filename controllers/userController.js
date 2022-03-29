@@ -30,8 +30,8 @@ const userController = {
                 path:'/user/refresh_token'
             })
 
-            res.json({accesstoken})
-            // res.json({msg:"register success."})
+            // res.json({accesstoken})
+            res.json({msg:"register success."})
 
         } catch (err) {
            return res.status(500).json({msg:err.message}) 

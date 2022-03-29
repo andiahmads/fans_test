@@ -13,7 +13,7 @@ router.route('/products')
 
 
 router.route('/products/:id')
-    .get(productController.getDetailProduct)
+    .get(auth,productController.getDetailProduct)
 
 
 router.route('/products/addcart')
