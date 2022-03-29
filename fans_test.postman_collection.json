@@ -1,0 +1,961 @@
+{
+	"info": {
+		"_postman_id": "61e1001b-7106-4b8e-be4d-ff7c6a694f3e",
+		"name": "fans_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama_lengkap\":\"user4\",\r\n    \"email\":\"user4@gmail.com\",\r\n    \"password\":\"user123\",\r\n    \"no_hp\":89890809\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "email already registerd",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama_lengkap\":\"user3\",\r\n    \"email\":\"user3@gmail.com\",\r\n    \"password\":\"user123\",\r\n    \"no_hp\":89890809\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-kwkXJMKeWh+9ZRt2/Wc+0PVUEW4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 07:53:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"email already exists.\"\n}"
+						},
+						{
+							"name": "password is at least 6 character long",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama_lengkap\":\"user4\",\r\n    \"email\":\"user4@gmail.com\",\r\n    \"password\":\"user1\",\r\n    \"no_hp\":89890809\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-H2D/fwuRH5cBdQfqEI2dKVR/tZ8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 07:54:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"password is at least 6 character long.\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama_lengkap\":\"user4\",\r\n    \"email\":\"user4@gmail.com\",\r\n    \"password\":\"user123\",\r\n    \"no_hp\":89890809\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDJiYjUwNjRlMzZhMjkxNjc0YzFhMiIsImlhdCI6MTY0ODU0MDQ5NiwiZXhwIjoxNjQ5MTQ1Mjk2fQ.kpfBMJrdCyTdUYoznf_oKbPXkuPxDGffkLHVw3ruGv4; Path=/user/refresh_token; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-BQa9YPFUqUIGO4/kkCTSC9h01Uw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 07:54:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"msg\": \"register success.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"user2@gmail.com\",\r\n    \"password\":\"user123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshtoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VjNmQ0MTZhZjM1ZDIxY2UyNTRlMCIsImlhdCI6MTY0ODU0MDU2NiwiZXhwIjoxNjQ5MTQ1MzY2fQ.coI1dEE5xcZFXLStmITymrvK78GekExtwHRPIQmrlec; Path=/user/refresh_token; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "189"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bd-fiJHXPgodmHDbDsBKbbrN2oOTL4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 07:56:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accesstoken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VjNmQ0MTZhZjM1ZDIxY2UyNTRlMCIsImlhdCI6MTY0ODU0MDU2NiwiZXhwIjoxNjQ4NjI2OTY2fQ.AedJKwlO4RKlliewZQFWNUw_CGCr2yNDMv2vmvLQauk\"\n}"
+						},
+						{
+							"name": "Incorret password.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"user2@gmail.com\",\r\n    \"password\":\"user12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-yJmI/3REmHhVXAUI6LgcTar6rbs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 07:56:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Incorret password.\"\n}"
+						},
+						{
+							"name": "user does not exists.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"user2@gmailc.com\",\r\n    \"password\":\"user123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-T9pBvz7DBfCRO1fomAP9O2bXa+E\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 07:57:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"user does not exists.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "show all product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VjNmQ0MTZhZjM1ZDIxY2UyNTRlMCIsImlhdCI6MTY0ODU0MDc4NCwiZXhwIjoxNjQ4NjI3MTg0fQ.iqCO_4tVDYXFIkLkVH04soL1RDeGUp5x1WjD_KRfkJ4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "invalid authentication.!",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-/LcQ2bQlC8yVYXUUy5wKU2Lmlj8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 07:58:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"invalid authentication.!\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VjNmQ0MTZhZjM1ZDIxY2UyNTRlMCIsImlhdCI6MTY0ODU0MDc4NCwiZXhwIjoxNjQ4NjI3MTg0fQ.iqCO_4tVDYXFIkLkVH04soL1RDeGUp5x1WjD_KRfkJ4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "466"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d2-7Ym5PBKcRzr64LUFIX2kRB5wgU8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 08:01:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"62413dab71ad546477e28812\",\n        \"product_id\": \"p01\",\n        \"title\": \"baju cucok\",\n        \"images\": \"https://res.cloudinary.com/treelogystudio-com/image/upload/v1648441962/baju_pdhyti.jpg\",\n        \"price\": 121,\n        \"jenis_kelamin\": \"laki-laki\",\n        \"size\": \"L\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"62413e6571ad546477e28817\",\n        \"product_id\": \"p02\",\n        \"title\": \"baju piyama\",\n        \"images\": \"https://res.cloudinary.com/treelogystudio-com/image/upload/v1648441962/baju_pdhyti.jpg\",\n        \"price\": 121,\n        \"jenis_kelamin\": \"perempuan\",\n        \"size\": \"M\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "show detail product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/products/62413dab71ad546477e28812",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"62413dab71ad546477e28812"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VjNmQ0MTZhZjM1ZDIxY2UyNTRlMCIsImlhdCI6MTY0ODU0MDc4NCwiZXhwIjoxNjQ4NjI3MTg0fQ.iqCO_4tVDYXFIkLkVH04soL1RDeGUp5x1WjD_KRfkJ4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/products/62413dab71ad546477e28812",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"products",
+										"62413dab71ad546477e28812"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "231"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e7-pwuYKEX7zb8wYsIi0clbg2fcvrI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 08:03:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"62413dab71ad546477e28812\",\n    \"product_id\": \"p01\",\n    \"title\": \"baju cucok\",\n    \"images\": \"https://res.cloudinary.com/treelogystudio-com/image/upload/v1648441962/baju_pdhyti.jpg\",\n    \"price\": 121,\n    \"jenis_kelamin\": \"laki-laki\",\n    \"size\": \"L\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "invalid authentication",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VjNmQ0MTZhZjM1ZDIxY2UyNTRlMCIsImlhdCI6MTY0ODU0MDc4NCwiZXhwIjoxNjQ4NjI3MTg0fQ.iqCO_4tVDYXFIkLkVH04soL1RDeGUp5x1WjD_KRfkJ4",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/products/62413dab71ad546477e28812",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"products",
+										"62413dab71ad546477e28812"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-/LcQ2bQlC8yVYXUUy5wKU2Lmlj8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 08:03:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"invalid authentication.!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add to cart",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VjNmQ0MTZhZjM1ZDIxY2UyNTRlMCIsImlhdCI6MTY0ODU0MDc4NCwiZXhwIjoxNjQ4NjI3MTg0fQ.iqCO_4tVDYXFIkLkVH04soL1RDeGUp5x1WjD_KRfkJ4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cart\":[\r\n        {\r\n        \"id\":\"62413e6571ad546477e28817\",\r\n        \"product_id\":\"p01\",\r\n        \"title\":\"baju piyama\",\r\n        \"images\":\"https://res.cloudinary.com/treelogystudio-com/image/upload/v1648441962/baju_pdhyti.jpg\",\r\n        \"price\":121,\r\n        \"jenis_kelamin\":\"perempuan\",\r\n        \"size\":\"M\"\r\n        \r\n    },\r\n    {\r\n        \"id\":\"62413dab71ad546477e28812\",\r\n        \"product_id\":\"p01\",\r\n        \"title\":\"baju cucok\",\r\n        \"images\":\"https://res.cloudinary.com/treelogystudio-com/image/upload/v1648441962/baju_pdhyti.jpg\",\r\n        \"price\":121,\r\n        \"jenis_kelamin\":\"laki-laki\",\r\n        \"size\":\"L\"   \r\n    }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/products/addcart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"addcart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VjNmQ0MTZhZjM1ZDIxY2UyNTRlMCIsImlhdCI6MTY0ODU0MDc4NCwiZXhwIjoxNjQ4NjI3MTg0fQ.iqCO_4tVDYXFIkLkVH04soL1RDeGUp5x1WjD_KRfkJ4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cart\":[\r\n        {\r\n        \"id\":\"62413e6571ad546477e28817\",\r\n        \"product_id\":\"p01\",\r\n        \"title\":\"baju piyama\",\r\n        \"images\":\"https://res.cloudinary.com/treelogystudio-com/image/upload/v1648441962/baju_pdhyti.jpg\",\r\n        \"price\":121,\r\n        \"jenis_kelamin\":\"perempuan\",\r\n        \"size\":\"M\"\r\n        \r\n    },\r\n    {\r\n        \"id\":\"62413dab71ad546477e28812\",\r\n        \"product_id\":\"p01\",\r\n        \"title\":\"baju cucok\",\r\n        \"images\":\"https://res.cloudinary.com/treelogystudio-com/image/upload/v1648441962/baju_pdhyti.jpg\",\r\n        \"price\":121,\r\n        \"jenis_kelamin\":\"laki-laki\",\r\n        \"size\":\"L\"   \r\n    }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/products/addcart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"products",
+										"addcart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-a6HOAwjVZ4K6xjabp8Gij2xi2fQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 08:09:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Added to cart\"\n}"
+						}
+					]
+				},
+				{
+					"name": "show all cart",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2VjNmQ0MTZhZjM1ZDIxY2UyNTRlMCIsImlhdCI6MTY0ODU0MDc4NCwiZXhwIjoxNjQ4NjI3MTg0fQ.iqCO_4tVDYXFIkLkVH04soL1RDeGUp5x1WjD_KRfkJ4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/showcart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"showcart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "543"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21f-ETd8m9zXWUI6nQJBr2WgLuyuvt4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Mar 2022 08:12:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cart\": [\n        {\n            \"id\": \"62413e6571ad546477e28817\",\n            \"product_id\": \"p01\",\n            \"title\": \"baju piyama\",\n            \"images\": \"https://res.cloudinary.com/treelogystudio-com/image/upload/v1648441962/baju_pdhyti.jpg\",\n            \"price\": 121,\n            \"jenis_kelamin\": \"perempuan\",\n            \"size\": \"M\"\n        },\n        {\n            \"id\": \"62413dab71ad546477e28812\",\n            \"product_id\": \"p01\",\n            \"title\": \"baju cucok\",\n            \"images\": \"https://res.cloudinary.com/treelogystudio-com/image/upload/v1648441962/baju_pdhyti.jpg\",\n            \"price\": 121,\n            \"jenis_kelamin\": \"laki-laki\",\n            \"size\": \"L\"\n        }\n    ],\n    \"createdAt\": \"2022-03-26T07:55:00.574Z\",\n    \"updatedAt\": \"2022-03-29T08:09:20.115Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
