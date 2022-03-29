@@ -9,7 +9,7 @@ const auth = require('../middleware/auth')
 router.post("/register",userController.register)
 router.post("/login",userController.login)
 router.get("/refresh_token",userController.refrehToken)
-router.get('/info',auth,userController.getUser)
+// router.get('/info',auth,userController.getUser)
 
 
 
