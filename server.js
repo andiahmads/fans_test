@@ -40,6 +40,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use("/user",require('./routes/userRoutes'))
+app.use("/api",require('./routes/productRoutes'))
 
 
 const PORT = process.env.PORT || 5000
